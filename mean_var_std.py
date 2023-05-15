@@ -9,17 +9,13 @@ def calculate(list):
         nnp=x.reshape(3,3)
                 
         calculations={
-                'mean': [nnp.mean(axis=0), nnp.mean(axis=1), nnp.mean()],
-                'variance': [nnp.var(axis=0), nnp.var(axis=1), nnp.var()],
-                'standard deviation': [nnp.std(axis=0), nnp.std(axis=1), nnp.std()],
-                'max': [nnp.max(axis=0), nnp.max(axis=1), nnp.max()],
-                'min': [nnp.min(axis=0), nnp.min(axis=1), nnp.min()],
-                'sum': [nnp.sum(axis=0), nnp.sum(axis=1), nnp.sum()]
+                'mean': [nnp.mean(axis=0).tolist(), nnp.mean(axis=1).tolist(), nnp.mean().tolist()],
+                'variance': [nnp.var(axis=0).tolist(), nnp.var(axis=1).tolist(), nnp.var().tolist()],
+                'standard deviation': [nnp.std(axis=0).tolist(), nnp.std(axis=1).tolist(), nnp.std().tolist()],
+                'max': [nnp.max(axis=0).tolist(), nnp.max(axis=1).tolist(), nnp.max().tolist()],
+                'min': [nnp.min(axis=0).tolist(), nnp.min(axis=1).tolist(), nnp.min().tolist()],
+                'sum': [nnp.sum(axis=0).tolist(), nnp.sum(axis=1).tolist(), nnp.sum().tolist()]
                     }
         return calculations
     else:
         raise ValueError("List must contain nine numbers.")
-
-
-
-
